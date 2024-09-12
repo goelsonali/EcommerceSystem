@@ -1,8 +1,9 @@
 package learn.app.components.reward;
 
+import learn.app.components.data.CustomerRepository;
 import learn.app.components.model.OrderDetails;
 import learn.app.components.model.OrderType;
-import learn.app.components.data.CustomerRepository;
+import learn.app.components.model.RewardType;
 
 public class RewardCalculation {
 
@@ -24,7 +25,7 @@ public class RewardCalculation {
         return rewardMatrix.loyaltyPoints(orderDetails.orderCost());
     }
 
-    public String getRewards() {
+    public RewardType applyReward() {
         //Evaluate the reward
         return rewardMatrix.rewards(CustomerRepository.getPoints(orderDetails.customerId()));
     }

@@ -1,6 +1,8 @@
 package learn.app.components.model;
 
 public enum RewardType {
+
+    NO_REWARD("No Reward"),
     DISCOUNT_5("5% OFF"),
     DISCOUNT_10("10% OFF"),
     DISCOUNT_15("15% OFF");

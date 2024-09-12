@@ -1,7 +1,7 @@
 package learn.app.components.reward;
 
-import learn.app.components.model.Constants;
 import learn.app.components.model.RewardType;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 //  a. points > 100 and points < 500 = 5% off next purchase.
 //  b. points > 500 and points < 1000 = 10% off next purchase.
 //  c. points > 1000 = 15% off next purchase.
+@Component
 public class OnlineRewardMatrix implements RewardMatrix {
     @Override
     public int loyaltyPoints(BigDecimal totalCost) {
@@ -19,15 +20,15 @@ public class OnlineRewardMatrix implements RewardMatrix {
     }
 
     @Override
-    public String rewards(int totalPoints) {
+    public RewardType rewards(int totalPoints) {
         if(totalPoints > 10 && totalPoints < 50) {
-            return RewardType.DISCOUNT_5.label();
-        } else if(totalPoints > 500 && totalPoints < 1000) {
-            return RewardType.DISCOUNT_10.label();
+            return RewardType.DISCOUNT_5;
+        } else if(totalPoints > 100 && totalPoints < 1000) {
+            return RewardType.DISCOUNT_10;
         } else if(totalPoints > 1000) {
-            return RewardType.DISCOUNT_15.label();
+            return RewardType.DISCOUNT_15;
         } else {
-            return Constants.NO_REWARDS;
+            return RewardType.NO_REWARD;
         }
     }
 }
