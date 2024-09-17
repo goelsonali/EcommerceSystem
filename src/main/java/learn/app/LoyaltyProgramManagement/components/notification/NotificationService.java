@@ -1,7 +1,7 @@
-package learn.app.components.notification;
+package learn.app.LoyaltyProgramManagement.components.notification;
 
-import learn.app.components.model.CustomerDetails;
-import learn.app.components.model.RewardType;
+import learn.app.LoyaltyProgramManagement.components.model.CustomerDetails;
+import learn.app.LoyaltyProgramManagement.components.model.RewardType;
 import org.springframework.stereotype.Service;
 
 @Service

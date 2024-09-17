@@ -1,8 +1,8 @@
-package learn.app.components.controller;
+package learn.app.LoyaltyProgramManagement.components.controller;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
-import learn.app.components.model.OrderDetails;
-import learn.app.components.service.LoyaltyProgramService;
+import learn.app.LoyaltyProgramManagement.components.model.OrderDetails;
+import learn.app.LoyaltyProgramManagement.components.service.LoyaltyProgramService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

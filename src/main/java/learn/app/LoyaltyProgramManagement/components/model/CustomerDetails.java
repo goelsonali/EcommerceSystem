@@ -1,4 +1,4 @@
-package learn.app.components.model;
+package learn.app.LoyaltyProgramManagement.components.model;
 
 import lombok.Builder;
 import lombok.Data;

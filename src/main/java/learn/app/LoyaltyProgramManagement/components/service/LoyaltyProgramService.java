@@ -1,9 +1,9 @@
-package learn.app.components.service;
+package learn.app.LoyaltyProgramManagement.components.service;
 
-import learn.app.components.model.OrderDetails;
-import learn.app.components.model.RewardType;
-import learn.app.components.notification.NotificationService;
-import learn.app.components.reward.RewardCalculation;
+import learn.app.LoyaltyProgramManagement.components.model.OrderDetails;
+import learn.app.LoyaltyProgramManagement.components.model.RewardType;
+import learn.app.LoyaltyProgramManagement.components.notification.NotificationService;
+import learn.app.LoyaltyProgramManagement.components.reward.RewardCalculation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

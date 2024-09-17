@@ -1,8 +1,6 @@
-package learn.app.components.model;
+package learn.app.LoyaltyProgramManagement.components.model;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-
 import java.math.BigDecimal;
 
 public record OrderDetails(

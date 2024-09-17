@@ -1,8 +1,8 @@
-package learn.app.components.data;
+package learn.app.LoyaltyProgramManagement.components.data;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import learn.app.components.model.OrderDetails;
+import learn.app.LoyaltyProgramManagement.components.model.OrderDetails;
 
 public class PurchaseDetails {
 

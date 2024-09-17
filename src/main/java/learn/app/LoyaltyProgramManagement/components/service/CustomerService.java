@@ -1,8 +1,8 @@
-package learn.app.components.service;
+package learn.app.LoyaltyProgramManagement.components.service;
 
-import learn.app.components.model.CustomerDetails;
-import learn.app.components.data.CustomerRepository;
-import learn.app.components.model.RewardType;
+import learn.app.LoyaltyProgramManagement.components.model.CustomerDetails;
+import learn.app.LoyaltyProgramManagement.components.data.CustomerRepository;
+import learn.app.LoyaltyProgramManagement.components.model.RewardType;
 import org.springframework.stereotype.Service;
 
 @Service
