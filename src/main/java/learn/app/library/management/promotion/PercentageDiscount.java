@@ -7,12 +7,8 @@ import learn.app.library.management.model.Product;
 public class PercentageDiscount implements Promotion {
 
   @Override
-  public void apply(List<Product> products, float discount) {
-    List<Product> productsToApplyDiscounts =
-        products.stream()
-            .filter(p -> p.getPromotionType().equals(PromotionType.PERCENTAGE_DISCOUNT))
-            .toList();
-    productsToApplyDiscounts.forEach(p -> p.setPrice(p.getPrice() * ((100 - discount)/100)));
+  public void apply(List<Product> products, PromotionType type) {
+    products.forEach(p -> p.setPrice(p.getPrice() * ((100 - Float.parseFloat(type.getDiscount()))/100)));
   }
 }
 

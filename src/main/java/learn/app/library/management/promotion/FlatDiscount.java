@@ -8,8 +8,7 @@ import learn.app.library.management.model.Product;
 public class FlatDiscount implements Promotion {
 
     @Override
-    public void apply(List<Product> products, float discount) {
-        products = products.stream().filter(p -> p.getPromotionType().equals(PromotionType.FLAT_DISCOUNT)).toList();
-        products.forEach(p -> p.setPrice(p.getPrice() - discount));
+    public void apply(List<Product> products, PromotionType type) {
+        products.forEach(p -> p.setPrice(p.getPrice() - Float.parseFloat(type.getDiscount())));
     }
 }

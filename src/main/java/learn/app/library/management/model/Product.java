@@ -9,7 +9,5 @@ public class Product {
 
     Book book;
     Double price;
-    @Builder.Default
-    PromotionType promotionType = PromotionType.NO_DISCOUNT;
 
 }

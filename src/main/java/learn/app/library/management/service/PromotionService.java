@@ -30,13 +30,14 @@ public class PromotionService {
         }
     }
 
-    public void applyPromotion(List<Product> products, PromotionType promotionType, float discount) {
+    public List<Product> applyPromotion(List<Product> products, PromotionType promotionType) {
         Promotion promotion = promotionTypeToPromotion.get(promotionType);
         if (promotion != null ) {
-            promotion.apply(products,discount);
+            promotion.apply(products,promotionType);
         } else {
             throw new UnknownPromotionTypeException("Invalid promotion type" + promotionType);
         }
+        return products;
     }
 
 }
