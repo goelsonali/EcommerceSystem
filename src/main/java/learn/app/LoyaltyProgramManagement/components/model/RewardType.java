@@ -1,4 +1,4 @@
-package learn.app.components.model;
+package learn.app.LoyaltyProgramManagement.components.model;
 
 public enum RewardType {
 

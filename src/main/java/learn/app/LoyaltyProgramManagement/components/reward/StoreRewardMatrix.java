@@ -1,6 +1,6 @@
-package learn.app.components.reward;
+package learn.app.LoyaltyProgramManagement.components.reward;
 
-import learn.app.components.model.RewardType;
+import learn.app.LoyaltyProgramManagement.components.model.RewardType;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;

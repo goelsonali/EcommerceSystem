@@ -6,10 +6,7 @@ import learn.app.library.management.model.PromotionType;
 import learn.app.library.management.service.PromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,8 +22,8 @@ public class PromotionController {
         this.service = service;
     }
 
-    @GetMapping("/apply/{type}")
-    ResponseEntity<List<Product>> apply(final List<Product> products, @PathVariable PromotionType type ) {
+    @PostMapping("/apply/{type}")
+    ResponseEntity<List<Product>> apply(@RequestBody List<Product> products, @PathVariable PromotionType type ) {
         return ResponseEntity.ok(service.applyPromotion(products, type));
     }
 }

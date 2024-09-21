@@ -1,9 +1,9 @@
-package learn.app.components.reward;
+package learn.app.LoyaltyProgramManagement.components.reward;
 
-import learn.app.components.data.CustomerRepository;
-import learn.app.components.model.OrderDetails;
-import learn.app.components.model.OrderType;
-import learn.app.components.model.RewardType;
+import learn.app.LoyaltyProgramManagement.components.data.CustomerRepository;
+import learn.app.LoyaltyProgramManagement.components.model.OrderDetails;
+import learn.app.LoyaltyProgramManagement.components.model.OrderType;
+import learn.app.LoyaltyProgramManagement.components.model.RewardType;
 
 public class RewardCalculation {
 
