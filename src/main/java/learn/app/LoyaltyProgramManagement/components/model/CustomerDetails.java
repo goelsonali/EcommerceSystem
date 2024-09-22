@@ -9,9 +9,9 @@ public class CustomerDetails {
 
     private String customerId;
     private int loyaltyPoints;
-
     @Builder.Default
     private RewardType rewardType = RewardType.NO_REWARD;
     // No-argument constructor (Lombok generates it automatically)
+
 }
 
