@@ -28,4 +28,12 @@ public class PromotionService {
         }
         return products;
     }
+
+    public List<String> getPromotionType() {
+        return strategyMap.entrySet().stream().map(Map.Entry::getKey).collect(Collectors.toList());
+    }
+    public Map<String,String> getPromotionDetails(String name) {
+        return strategyMap.entrySet().stream().filter(es -> name.equalsIgnoreCase(es.getKey())).collect(Collectors.toMap(Map.Entry::getKey, es -> es.getValue().discount()));
+
+    }
 }

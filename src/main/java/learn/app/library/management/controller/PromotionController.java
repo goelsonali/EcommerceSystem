@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @Tag(name = "API for promotion engine")
@@ -25,5 +26,15 @@ public class PromotionController {
     @PostMapping("/apply/{type}")
     ResponseEntity<List<Product>> apply(@RequestBody List<Product> products, @PathVariable PromotionType type ) {
         return ResponseEntity.ok(service.applyPromotion(products, type));
+    }
+
+    @GetMapping("/promotionType")
+    ResponseEntity<List<String>> getPromotionType() {
+        return ResponseEntity.ok(service.getPromotionType());
+    }
+
+    @GetMapping("/promotionType/{name}")
+    ResponseEntity<Map<String,String>> getPromotionByName(@PathVariable final String name) {
+        return ResponseEntity.ok(service.getPromotionDetails(name));
     }
 }
