@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 @Service
 public class RemoveBook implements Action {
-    private HashSet<Book> books;
+    private final HashSet<Book> books;
 
     public RemoveBook(HashSet<Book> books) {
         this.books = books;
