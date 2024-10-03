@@ -8,4 +8,6 @@ public interface Action {
 
     List<Item> perform (Item item, List<Item> items);
 
+    ActionType getAction();
+
 }

@@ -10,19 +10,18 @@ import learn.app.shopping.cart.management.action.*;
 import learn.app.shopping.cart.management.model.Item;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class CartManagementServiceTest {
 
-  @Mock private AddItem addItem;
-
-  @Mock private RemoveItem removeItem;
+  @Mock private Action mockAction;
 
   @Mock private ViewItem viewItems;
 
-  @InjectMocks private CartManagementService classToTest;
+  @Mock private List<Action> mockActions;
+
+  private CartManagementService classToTest;
 
   private List<Item> mockCartItem;
 
@@ -30,24 +29,29 @@ public class CartManagementServiceTest {
     void setup() {
         MockitoAnnotations.openMocks(this);
         mockCartItem = new ArrayList<>();
+        mockActions = List.of(mockAction);
+        classToTest = new CartManagementService(mockActions,viewItems);
     }
 
     @Test
     void whenAddAnItem() {
         Item mockItem = createItem();
-        when(addItem.perform(any(), any())).thenReturn(mockCartItem);
+        when(mockAction.getAction()).thenReturn(ActionType.ADD);
+        when(mockAction.perform(any(), any())).thenReturn(mockCartItem);
+        
 
         classToTest.performAction(ActionType.ADD, mockItem);
-        verify(addItem, times(1)).perform(mockItem, mockCartItem);
+        verify(mockAction, times(1)).perform(mockItem, mockCartItem);
     }
 
-    @Test
+   @Test
     void whenRemoveAnItem() {
         Item mockItem = createItem();
-        when(removeItem.perform(any(), any())).thenReturn(mockCartItem);
-
+       when(mockAction.getAction()).thenReturn(ActionType.REMOVE);
+       when(mockAction.perform(any(), any())).thenReturn(mockCartItem);
+       
         classToTest.performAction(ActionType.REMOVE, mockItem);
-        verify(removeItem, times(1)).perform(mockItem, mockCartItem);
+        verify(mockAction, times(1)).perform(mockItem, mockCartItem);
     }
 
     @Test
